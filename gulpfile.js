@@ -34,6 +34,10 @@ gulp.task("compileSass", function() {
 		.pipe(gulp.dest("app/css"))
 });
 
+gulp.task("watchSass", function() {
+	gulp.watch('app/scss/**/*.scss', ['compileSass']);
+});
+
 gulp.task("build", ['minifyScripts', 'compileSass']);
 
 gulp.task("default", ['build']);
