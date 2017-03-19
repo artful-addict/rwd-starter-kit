@@ -50,19 +50,29 @@ With the above code, you have entered, you should now see three folders within t
 `touch src/css/styles.css src/js/main.js` and press `enter` on your keyboard
 
 Great! You've successfully navigated and created some folders and files within your base-directory. Let's try installing dev dependencies now. Here are a few more codes you should know:
+
 `-g` and `--global` - a flag used for installing software globally to your computer; not just as a dev dependency within a prject. This should be placed before the name of some software you're installing if used globally.
+
 Example: `package-manager-name install -g software-or-dependency-name`
+
 `--save-dev` - a flag used to determine if some software installation is a dev dependency. This is typically saved in the modules folder of whichever package manager you're using for your project (example: Bower or NPM).
+
 `-v` - a more conventional code for checking the version of some software. Also a good indication if whether or not the software is installed on your computer to begin with.
+
 `npm` - the prefix used for initiating Node Package Manager. This should be initiated with `npm init` when setting up a project with tasks ran with Gulp or any other node-based software. (NPM is **not** NodeJS)
+
 `bower` - the prefix used for initiating Bower.
 
 #### Installing a Dev Dependency
 In your terminal, let's install Gulp. Before we're able to do that, let's create our Gulp file, **gulpfile.js** in the base of our directory, NodeJS, NPM, and then we'll install Gulp both globally, and as a dev dependency:
 Check to see if NodeJS is installed:
+
 `node -v` Press `enter` on your keyboard. If it is installed, a version number will appear, otherwise you'll likely be prompted that NodeJS is **not** installed, and will be given brief suggestions on how to install it via your Terminal App. Now that we have NodeJS installed, let's initiate it.
+
 `npm init` press `enter` on your keyboard. You'll notice a node_modules folder appear in your folder tree. This is where all your dev dependencies will go. Most importantly, a package.json file should now appear in the base of your directory. This is where we can see what dependencies are actually being used. Next, install Gulp globally first, and then as a dev dependency:
+
 `npm install -g gulp` press `enter` on your keyboard. For some Mac users, you may have to use the `sudo` prefix before `npm install -g gulp` for admin access. Now as a dev dependency:
+
 `npm install gulp --save-dev` now press `enter` on your keyboard.
 
 Notice that we used the two flags `-g` and `--save-dev` for installing Gulp on both your machine and as a dev dependency. You'll find yourself using these flags quite often - for some dev dependencies rely on the software being installed globally as well. Depending on what text editing software you're using (VSCode, SublimeText, Atom, etc.), you may have to refresh your tree, if the option is available. Otherwise, look inside the **node_modules** folder for the gulp folder to know it installed there. Next, check the package.json file and search for `"dependencies:"`. There should be `gulp` with a version number to the right of it. Using command prompt are some best practices in adding new dev dependencies to your RWD Starter Kit. Enjoy!
