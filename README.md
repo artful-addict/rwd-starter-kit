@@ -32,13 +32,21 @@ Gulp is the task manager used to run tasks like compiling Sass, concatinating Ja
 ## Command Line (for Mac)
 
 `ls` - lists all the files and folders in the directory you're currently in. It is best practice to type `ls` while in your terminal so you can see which folder you're in.
+
 `cd` - used to change the directory (or folder) from the one you're currently in. Best practiced with `ls`.
+
 `mkdir` - used to make a directory (or folder).
+
 `rm -r` - used to remove a directory.
+
 `rm -rf` - used to remove a file within a directory.
+
 `touch` - used to create a file.
+
 `../` - used to back out of a particular directory into its parent-directory.
+
 `which` used with `name of software` - used to find out where a dependency is installed on your local drive
+
 
 ### Combining the above actions in command prompt
 #### Making a new directory
