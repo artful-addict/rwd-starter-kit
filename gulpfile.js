@@ -10,8 +10,7 @@ var			gulp = require('gulp'),
 
 gulp.task("concatScripts", function() {
 	return gulp.src([
-					'node_modules/jquery/dist/jquery.js',
-					'node_modules/bootstrap/dist/js/bootstrap.js',
+					'node_modules/bootstrap-sass/javascripts/bootstrap.js',
 					'js/main.js'])
 		.pipe(maps.init())
 		.pipe(concat('app.js'))
