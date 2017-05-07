@@ -5,8 +5,9 @@ var			gulp = require('gulp'),
 			uglify = require('gulp-uglify'),
 			rename = require('gulp-rename'),
 			  sass = require('gulp-sass'),
-				maps = require('gulp-sourcemaps'),
-				 del = require('del');
+			  jade = require('gulp-jade'),
+			  maps = require('gulp-sourcemaps'),
+			   del = require('del');
 
 gulp.task("concatScripts", function() {
 	return gulp.src([
@@ -34,6 +35,15 @@ gulp.task("compileSass", function() {
 		.pipe(gulp.dest("css"))
 });
 
+gulp.task("templates", function() {
+	return gulp.src('index.jade')
+		.pipe(jade({
+			jade: jade,
+			pretty: true
+		}))
+		.pipe(gulp.dest('dist'))
+});
+
 /**
  * The first task block only watches the Sass files and then only runs compile-
  * Sass task. The second task block only watches main.js and only runs the con-
@@ -48,7 +58,7 @@ gulp.task("clean", function() {
 	del(['dist', 'css/styles.css*', 'js/app.*.js*']);
 });
 
-gulp.task("build", ['minifyScripts', 'compileSass'], function() {
+gulp.task("build", ['minifyScripts', 'compileSass', 'templates'], function() {
 	return gulp.src(['css/styles.css', 'js/app.min.js', 'index.html', 'img/**'], { base: './'})
 		.pipe(gulp.dest('dist'))
 });
